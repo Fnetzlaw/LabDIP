@@ -22,12 +22,11 @@ public class Startup {
     public static enum ServiceQuality {
            GOOD, FAIR, POOR
     };
+    
  
     public static void main(String[] args) {
         
-        BaggageServiceTipCalculator service =
-                new BaggageServiceTipCalculator(
-                BaggageServiceTipCalculator.ServiceQuality.FAIR,5);
+       
         
     }
 
