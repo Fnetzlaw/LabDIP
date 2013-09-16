@@ -19,21 +19,21 @@ public class Startup {
 //        so i can subsutie the baggage for food service if needed. this is making
 //        it not rigid.
         Tip baggageStrategy1 =
-                new BaggageService(
-                BaggageService.ServiceQuality.FAIR,5);
+                new BaggageStrategy(
+                BaggageStrategy.ServiceQuality.FAIR,5);
         
         Tip baggageStrategy2 =
-                new BaggageService(
-                BaggageService.ServiceQuality.GOOD,5);
+                new BaggageStrategy(
+                BaggageStrategy.ServiceQuality.GOOD,5);
 //
 //
         Tip foodStrategy1 = 
-                new FoodService(
-                FoodService.ServiceQuality.GOOD, 15);
+                new FoodStrategy(
+                FoodStrategy.ServiceQuality.GOOD, 15);
         
         Tip foodStrategy2 = 
-                new FoodService(
-                FoodService.ServiceQuality.POOR, 15);
+                new FoodStrategy(
+                FoodStrategy.ServiceQuality.POOR, 15);
 //
 //
         Tip[] foodService = {foodStrategy1, foodStrategy2};

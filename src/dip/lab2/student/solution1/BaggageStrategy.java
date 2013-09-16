@@ -8,7 +8,7 @@ package dip.lab2.student.solution1;
  *
  * @author netzl_000
  */
-public class BaggageService implements Tip {
+public class BaggageStrategy implements Tip {
 private static final double MIN_BILL = 0.00;
     private static double GOOD_RATE = 0.20;
     private static double FAIR_RATE = 0.15;
@@ -18,7 +18,7 @@ private static final double MIN_BILL = 0.00;
     private double baseTipPerBag;
     private int bagCount;
     
-    public BaggageService(Tip.ServiceQuality q, int bags) {
+    public BaggageStrategy(Tip.ServiceQuality q, int bags) {
         this.setServiceRating(q); // perform validation
         this.setBagCount(bags);
 

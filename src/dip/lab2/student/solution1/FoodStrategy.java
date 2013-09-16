@@ -9,7 +9,7 @@ package dip.lab2.student.solution1;
  * @author Expression Fnetzlaw is undefined on line 12, column 14 in
  * Templates/Classes/Class.java.
  */
-public class FoodService implements Tip {
+public class FoodStrategy implements Tip {
     private static double MIN_BILL = 0.00;
     private static double GOOD_RATE = 0.20;
     private static double FAIR_RATE = 0.15;
@@ -19,7 +19,7 @@ public class FoodService implements Tip {
 
     private double bill;
     
-    public FoodService(Tip.ServiceQuality q, double billAmt) {
+    public FoodStrategy(Tip.ServiceQuality q, double billAmt) {
         this.setServiceRating(q);
         this.setBill(billAmt);
     }
