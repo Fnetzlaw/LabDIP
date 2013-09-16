@@ -10,25 +10,17 @@ package dip.lab2.student.solution1;
  * Templates/Classes/Class.java.
  */
 public class CalculatorService {
+private Tip tip;
 
-    private Tip tips;
-
-    public CalculatorService(Tip t) {
-        tips = t;
+    public Tip getTip() {
+        return tip;
     }
 
-    public CalculatorService() {
+    public void setTip(Tip tip) {
+        this.tip = tip;
     }
 
-    public void setEmployee(Tip t) {
-        if (t == null) {
-            throw new NullPointerException();
-        }
-
-        tips = t;
-    }
-
-    public double getTipForService(double tip) {
-        return tips.getTip(tip);
+    public double getTipValue(){
+        return tip.getTipValue();
     }
 }

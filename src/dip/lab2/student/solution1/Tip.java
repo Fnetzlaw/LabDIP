@@ -10,7 +10,9 @@ package dip.lab2.student.solution1;
  */
 public interface Tip {
     
-    
-    public abstract double getTip(double tip);
+    public static enum ServiceQuality {
+        GOOD, FAIR, POOR
+    }
+    public abstract double getTipValue();
     
 }

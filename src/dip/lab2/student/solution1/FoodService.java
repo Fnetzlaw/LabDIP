@@ -10,24 +10,25 @@ package dip.lab2.student.solution1;
  * Templates/Classes/Class.java.
  */
 public class FoodService implements Tip {
-
-    private static final double MIN_BILL = 0.00;
+    private static double MIN_BILL = 0.00;
+    private static double GOOD_RATE = 0.20;
+    private static double FAIR_RATE = 0.15;
+    private static double POOR_RATE = 0.10;
     private static final String BILL_ENTRY_ERR =
             "Error: bill must be greater than or equal to " + MIN_BILL;
-    private static final double GOOD_RATE = 0.20;
-    private static final double FAIR_RATE = 0.15;
-    private static final double POOR_RATE = 0.10;
+
     private double bill;
-
-    public enum ServiceQuality {
-
-        GOOD, FAIR, POOR
+    
+    public FoodService(Tip.ServiceQuality q, double billAmt) {
+        this.setServiceRating(q);
+        this.setBill(billAmt);
     }
-    private ServiceQuality serviceQuality;
-
+    
     @Override
-    public double getTip(double tip) {
-        switch (serviceQuality) {
+    public double getTipValue() {
+        double tip = 0.00; // always initialize local variables
+
+        switch(serviceQuality) {
             case GOOD:
                 tip = bill * GOOD_RATE;
                 break;
@@ -40,24 +41,24 @@ public class FoodService implements Tip {
         }
 
         return tip;
+    }
+    
+    private Tip.ServiceQuality serviceQuality;
 
+    public final void setBill(double billAmt) {
+        if(billAmt < MIN_BILL) {
+            throw new IllegalArgumentException(BILL_ENTRY_ERR);
+        }
+        bill = billAmt;
     }
 
-    public double getBill() {
-        return bill;
-    }
-
-    public void setBill(double bill) {
-        this.bill = bill;
+    public final void setServiceRating(ServiceQuality q) {
+        // No need to validate because enums provide type safety!
+        serviceQuality = q;
     }
 
     public ServiceQuality getServiceQuality() {
         return serviceQuality;
     }
-
-    public void setServiceQuality(ServiceQuality serviceQuality) {
-        this.serviceQuality = serviceQuality;
-    }
-    
     
 }
